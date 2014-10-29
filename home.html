@@ -79,6 +79,7 @@
 <div data-role="page" data-theme="a" id="mainpage">
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
 				<h1>Library onClick</h1>
+				<a class="reload" class="ui-btn-right">Reload</a>
 		</div>
 		
 		<div data-role="content" data-theme="a" align="center">
@@ -102,6 +103,7 @@
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
 			<h1>Books</h1>
 				<a href="#mainpage" class="ui-btn-left"> Back </a>
+				<a class="reload" class="ui-btn-right">Reload</a>
 		</div>
 		
 		<div data-role="content" data-theme="a" align="center">
@@ -131,6 +133,7 @@
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
 		<h1>View Book</h1>
 						<a href="#mainpage" class="ui-btn-left"> Back </a>
+						<a class="reload" class="ui-btn-right">Reload</a>
 		</div>
 		
 		<div data-role="content" data-theme="a">
@@ -163,6 +166,7 @@
 	<div data-role="header" data-position="fixed" data-tap-toggle="false">
 		<h1>My Transactions</h1>
 						<a href="#mainpage" class="ui-btn-left"> Back </a>
+						<a class="reload" class="ui-btn-right">Reload</a>
 		</div>
 		
 <div data-role="content" data-theme="a" align="center">
@@ -205,6 +209,9 @@
 
 
 		<script>
+		$(".reload").click(function(){
+		location.reload();
+		});
 		function load(){
 		
 var student=window.localStorage.getItem('student');
@@ -313,7 +320,7 @@ $.getJSON("http://gordoncollege-library.com/minclude/addBorrow.php?callback=?", 
 							
 							
          				}).fail(function(data){
-						alert("No duplicate book"+ data.verify);
+						alert("Failed to Borrow");
          });
 }
 $(".logout").click(function(){
